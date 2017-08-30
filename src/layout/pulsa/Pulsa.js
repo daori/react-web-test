@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
+class TabContent extends React.Component {
+    
+    constructor() {
+        super();
+    }
+
+    render() {
+        return(
+            <h2>content1</h2>
+        );
+    }
+    
+}
 
 export default class Pulsa extends React.Component {
 
@@ -15,6 +28,7 @@ export default class Pulsa extends React.Component {
     
     }
 
+
     render() {
     
         return (
@@ -25,7 +39,7 @@ export default class Pulsa extends React.Component {
                 })}
                 </TabList>
                 <TabPanel>
-                    <h2>Any content 1</h2>
+                    <TabContent/>
                 </TabPanel>
                 <TabPanel>
                     <h2>Any content 2</h2>
