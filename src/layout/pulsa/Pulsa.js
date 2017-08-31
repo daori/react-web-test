@@ -1,20 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import TabContent from './tabContent.js'
 
-class TabContent extends React.Component {
-    
-    constructor() {
-        super();
-    }
-
-    render() {
-        return(
-            <h2>content1</h2>
-        );
-    }
-    
-}
 
 export default class Pulsa extends React.Component {
 
@@ -30,19 +18,21 @@ export default class Pulsa extends React.Component {
 
 
     render() {
-    
         return (
             <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.setState({ tabIndex })}>
                 <TabList>
                 {this.state.tabs.map(function(tab) {
-                    return <Tab>{tab}</Tab>
+                    return <Tab key={tab}>{tab}</Tab>
                 })}
                 </TabList>
                 <TabPanel>
                     <TabContent/>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <h2>Any content e</h2>
+                </TabPanel>
+                <TabPanel>
+                    <h2>Any content 3</h2>
                 </TabPanel>
             </Tabs>
 
