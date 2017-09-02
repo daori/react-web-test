@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 
-export default class Pulsa extends React.Component {
+export default class Pulsa extends Component {
 
     constructor(){
         super();

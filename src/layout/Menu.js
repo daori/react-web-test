@@ -1,29 +1,24 @@
 import React, { Component } from 'react';
-import { push as Menu } from 'react-burger-menu'
-import { connect } from 'react-redux'
-import { decorator as reduxBurgerMenu } from 'redux-burger-menu';
-import Pulsa from './pulsa/Pulsa.js';
-import { pulsaMenu } from '../actions'
+import Menu from './reduxBurgerMenu'
+import Page from './container/Page'
+import SideMenu from './container/SideMenu'
+import * as action from '../actions'
 
-// export default reduxBurgerMenu(Menu);
-
-export default class BurgerMenu extends React.Component {
+class BurgerMenu extends Component {
     render() {
         return (
             <div id="outer-container" style={{ height: '100%' }}>
                 <Menu left id="push" pageWrapId={"page-wrap"}>
-                    <a onClick={e => {
-                        e.preventDefault();
-                        { console.log('xxx') }
-                    }
-                    } id="pulsa" className="bm-item" href="/pulsa"><span>Pulsa</span></a>
-                    <a id="paket-data" className="bm-item" href="/paket-data"><span>Paket Data</span></a>
-                    <a id="pln" className="bm-item" href="/pln"><span>PLN</span></a>
+                    <SideMenu activePage={action.PULSA_MENU} linkText="Pulsa"  />
+                    <SideMenu activePage={action.DATA_PLAN_MENU} linkText="Data Plan" />
+                    <SideMenu activePage={action.PLN_MENU} linkText="PLN" />
                 </Menu>
                 <main id="page-wrap">
-                    <Pulsa />
+                    <Page activePage={action.PULSA_MENU}/>
                 </main>
             </div>
         );
     }
 }
+
+export default BurgerMenu;

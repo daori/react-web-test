@@ -1,12 +1,11 @@
 import {createStore, combineReducers} from 'redux';
 import {reducer as burgerMenu} from 'redux-burger-menu';
+import sideMenu from './sideMenu'
+import activePage from './activePage'
 
-const reducers = {
-  // Your other reducers go here
-  burgerMenu // Must be mounted at 'burgerMenu'
-};
 
-const reducer = combineReducers(reducers);
-const store = createStore(reducer);
-
-export default reducer;
+export default combineReducers ({
+  burgerMenu,
+  sideMenu,
+  activePage
+})

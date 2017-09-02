@@ -1,16 +1,18 @@
-let nextTodoId = 0;
+export const PULSA_MENU = 'PULSA_MENU'
+export const DATA_PLAN_MENU = 'DATA_PLAN_MENU'
+export const PLN_MENU = 'PLN_MENU'
+export const CHANGE_PAGE = 'CHANGE_PAGE'
 
-export const pulsaMenu = text => {
-    return {
-        type:'PULSA_MENU',
-        id:nextTodoId++,
-        text
-    }
-}
+export const sideMenuClicked = (activePage, linkText) => ({
+    type: activePage,
+    active: true,
+    linkText: linkText,
+    activePage: activePage
+})
 
-export const toggleMenu = id => {
+export const updateActivePage = (activePage) => {
     return {
-        type:'TOGGLE_MENU',
-        id
+        type: CHANGE_PAGE,
+        activePage: activePage
     }
 }
